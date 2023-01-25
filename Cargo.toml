@@ -1,0 +1,23 @@
+[package]
+name = "blackpill"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# provides access to low level ARM CPU registers (used for delay)
+cortex-m = "0.7.7"
+# provides startup code for the ARM CPU
+cortex-m-rt = "0.7.2"
+embedded-hal = "0.2.7"
+nb = "1.0.0"
+# provies a panic-handler (halting cpu)
+# (required when not using stdlib)
+panic-halt = "0.2.0"
+# Chips
+hx711 = { git = "https://github.com/jonas-hagen/hx711", branch = "jh-fix-mode-enum" }
+
+[dependencies.stm32f4xx-hal]
+version = "0.14.0"
+features = ["stm32f411", "rt"]
