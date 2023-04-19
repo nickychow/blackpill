@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "preLaunchTask": "${defaultBuildTask}",
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "probe_rs Executable Test",
+      "chip": "STM32F411CEUx",
+      "coreConfigs": [
+        {
+          "programBinary": "Relative or fully qualified path to your programBinary" //!MODIFY
+        }
+      ]
+    }
+  ]
+}

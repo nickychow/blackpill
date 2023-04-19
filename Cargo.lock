@@ -36,8 +36,8 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "embedded-hal 0.2.7",
- "hx711",
- "nb 1.0.0",
+ "fugit",
+ "nb 1.1.0",
  "panic-halt",
  "stm32f4xx-hal",
 ]
@@ -56,9 +56,9 @@ dependencies = [
 
 [[package]]
 name = "cortex-m-rt"
-version = "0.7.2"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d6d3328b8b5534f0c90acd66b68950f2763b37e0173cac4d8b4937c4a80761f9"
+checksum = "ee84e813d593101b1723e13ec38b6ab6abbdbaaa4546553f5395ed274079ddb1"
 dependencies = [
  "cortex-m-rt-macros",
 ]
@@ -99,7 +99,7 @@ version = "1.0.0-alpha.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3babfc7fd332142a0b11aebf592992f211f4e01b6222fb04b03aba1bd80018d"
 dependencies = [
- "nb 1.0.0",
+ "nb 1.1.0",
 ]
 
 [[package]]
@@ -124,7 +124,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d9607bfc4c388f9d629704f56ede4a007546cad417b3bcd6fc7c87dc7edce04a"
 dependencies = [
  "fugit",
- "nb 1.0.0",
+ "nb 1.1.0",
 ]
 
 [[package]]
@@ -134,28 +134,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d758ba1b47b00caf47f24925c0074ecb20d6dfcffe7f6d53395c0465674841a"
 
 [[package]]
-name = "hx711"
-version = "0.7.0"
-source = "git+https://github.com/jonas-hagen/hx711?branch=jh-fix-mode-enum#773cc06dd765e61a37790a471f022e4ff3dabdbc"
-dependencies = [
- "embedded-hal 0.2.7",
- "nb 1.0.0",
-]
-
-[[package]]
 name = "nb"
 version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "801d31da0513b6ec5214e9bf433a77966320625a37860f910be265be6e18d06f"
 dependencies = [
- "nb 1.0.0",
+ "nb 1.1.0",
 ]
 
 [[package]]
 name = "nb"
-version = "1.0.0"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "546c37ac5d9e56f55e73b677106873d9d9f5190605e41a856503623648488cae"
+checksum = "8d5439c4ad607c3c23abf66de8c8bf57ba8adcd1f129e699851a6e43935d339d"
 
 [[package]]
 name = "panic-halt"
@@ -165,18 +156,18 @@ checksum = "de96540e0ebde571dc55c73d60ef407c653844e6f9a1e2fdbd40c07b9252d812"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.50"
+version = "1.0.56"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ef7d57beacfaf2d8aee5937dab7b7f28de3cb8b1828479bb5de2a7106f2bae2"
+checksum = "2b63bdb0cd06f1f4dedf69b254734f9b45af66e4a031e42a7480257d9898b435"
 dependencies = [
  "unicode-ident",
 ]
 
 [[package]]
 name = "quote"
-version = "1.0.23"
+version = "1.0.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8856d8364d252a14d474036ea1358d63c9e6965c8e5c1885c18f73d70bff9c7b"
+checksum = "4424af4bf778aae2051a77b60283332f386554255d722233d09fbfc7e30da2fc"
 dependencies = [
  "proc-macro2",
 ]
@@ -231,9 +222,9 @@ dependencies = [
 
 [[package]]
 name = "stm32f4xx-hal"
-version = "0.14.0"
+version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dbb045e607d0946eca27523141d192d7ee91aea0dff9736be100b8fc0c186abf"
+checksum = "e60d70c1deaa1411348f1efc64761d183ab87e86b8208c5c42796a86fe6217a7"
 dependencies = [
  "bare-metal 1.0.0",
  "bitflags",
@@ -245,7 +236,7 @@ dependencies = [
  "embedded-storage",
  "fugit",
  "fugit-timer",
- "nb 1.0.0",
+ "nb 1.1.0",
  "rand_core",
  "stm32f4",
  "time",
@@ -254,9 +245,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "1.0.107"
+version = "1.0.109"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f4064b5b16e03ae50984a5a8ed5d4f8803e6bc1fd170a3cda91a1be4b18e3f5"
+checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -265,9 +256,9 @@ dependencies = [
 
 [[package]]
 name = "time"
-version = "0.3.17"
+version = "0.3.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a561bf4617eebd33bca6434b988f39ed798e527f51a1e797d0ee4f61c0a38376"
+checksum = "cd0cbfecb4d19b5ea75bb31ad904eb5b9fa13f21079c3b92017ebdf4999a5890"
 dependencies = [
  "time-core",
 ]
@@ -280,9 +271,9 @@ checksum = "2e153e1f1acaef8acc537e68b44906d2db6436e2b35ac2c6b42640fff91f00fd"
 
 [[package]]
 name = "unicode-ident"
-version = "1.0.6"
+version = "1.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84a22b9f218b40614adcb3f4ff08b703773ad44fa9423e4e0d346d5db86e4ebc"
+checksum = "e5464a87b239f13a63a501f2701565754bae92d243d4bb7eb12f6d57d2269bf4"
 
 [[package]]
 name = "vcell"
