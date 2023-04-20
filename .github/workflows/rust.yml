@@ -25,9 +25,14 @@ jobs:
       - name: Add Cortex-M4F target
         run: rustup target add thumbv7em-none-eabihf
 
-      - uses: actions-rs/cargo@v1.0.1
-        with:
-          command: check
+      - name: Run Check
+        run: cargo check
+
+      # - uses: actions-rs/cargo@v1.0.1
+      #   with:
+      #     command: check
 
       # - name: Run tests
       #   run: cargo test --verbose
+      # - name: Build
+      #   run: cargo build --verbose
