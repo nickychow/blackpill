@@ -20,19 +20,42 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: Use the latest ${{ matrix.rust }} rustc
-      #   run: rustup update ${{ matrix.rust }} && rustup default ${{ matrix.rust }}
       - name: Add Cortex-M4F target
-        run: rustup target add thumbv7em-none-eabihf
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: thumbv7em-none-eabihf
+          components: clippy
 
       - name: Run Check
         run: cargo check
+        continue-on-error: true
 
-      # - uses: actions-rs/cargo@v1.0.1
-      #   with:
-      #     command: check
+      - name: Lint
+        run: |
+          cargo fmt -- --check
+          cargo clippy -- -D warnings
+        continue-on-error: true
 
-      # - name: Run tests
-      #   run: cargo test --verbose
+      - name: Test
+        run: |
+          cargo test --verbose
+
       # - name: Build
-      #   run: cargo build --verbose
+      #   run: |
+      #     cargo build --verbose
+
+      # - name: Install required cargo
+      #   run: cargo install clippy-sarif sarif-fmt
+
+      # - name: Run rust-clippy
+      #   run:
+      #     cargo clippy
+      #     --all-features
+      #     --message-format=json | clippy-sarif | tee rust-clippy-results.sarif | sarif-fmt
+      #   continue-on-error: true
+
+      # - name: Upload analysis results to GitHub
+      #   uses: github/codeql-action/upload-sarif@v1
+      #   with:
+      #     sarif_file: rust-clippy-results.sarif
+      #     wait-for-processing: true
